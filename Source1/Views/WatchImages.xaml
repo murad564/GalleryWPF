@@ -1,0 +1,62 @@
+﻿<Window x:Class="Source.Views.WatchImages"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Source.Views"
+        mc:Ignorable="d"
+        Title="Images" Height="800" Width="800" Background="White">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF00FFCA" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60px"/>
+            <RowDefinition  Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Image Width="65" Height="55" HorizontalAlignment="Left" Margin="5 0 0 0" Source="/StaticFiles/Images/menuIcon.png" Stretch="Uniform"></Image>
+            <Label VerticalAlignment="Center" FontSize="25" FontFamily="Bell MT" Foreground="#FF264F7D">Gallery</Label>
+        </StackPanel>
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="top" Height="*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button Height="50" Width="60" HorizontalAlignment="Left" Margin="20 0" BorderBrush="{x:Null}" Click="Button_Click_2">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="/StaticFiles/Images/icons8-go-back-80.png"/>
+                </Button.Background>
+            </Button>
+            <Image Grid.Row="1" Margin="150 10"  Width="500" Stretch="Fill" Source="{Binding Selected.ImageUrl}" ></Image>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button Name="prev" Width="80" Height="50" BorderBrush="{x:Null}" Click="Button_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/StaticFiles/Images/icons8-previous-100.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Width="80" Height="50" BorderBrush="{x:Null}" Click="Button_Click_3">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/StaticFiles/Images/icons8-pause-button-100.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Width="80" Height="50" BorderBrush="{x:Null}" Click="Button_Click_1">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/StaticFiles/Images/icons8-play-button-circled-90.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+                <Button Name="next" Width="80" Height="50" BorderBrush="{x:Null}" Click="Button_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/StaticFiles/Images/icons8-last-100.png" Stretch="Uniform"/>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window> 
